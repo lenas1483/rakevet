@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="net.azuresites.rakevetfront.registrationtests.PositiveRegistrationTests">
+      <class name="net.azuresites.rakevetfront.registrationtests.RegistrationPositiveTests">
         <methods>
-          <include name="logInTest"/>
+          <include name="RegistrationTest"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- net.azuresites.rakevetfront.registrationtests.PositiveRegistrationTests -->
+      </class> <!-- net.azuresites.rakevetfront.registrationtests.RegistrationPositiveTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
