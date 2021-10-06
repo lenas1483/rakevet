@@ -4,7 +4,7 @@
 	
 	<test name="PositiveLogInTest">
 		<classes>
-			<class name="net.azuresites.rakevetfront.registrationtests.PositiveRegistrationTests" />
+			<class name="net.azuresites.rakevetfront.registrationtests.PositiveLoginTests" />
 		</classes>
 	</test>
 	

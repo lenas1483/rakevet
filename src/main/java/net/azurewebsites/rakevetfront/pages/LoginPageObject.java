@@ -14,6 +14,7 @@ public class LoginPageObject extends BasePageObject {
 	private String pageUrl = "https://rakevet-front.azurewebsites.net/";
 	private By emailLocator = By.id("email");
 	private By passwordLocator = By.id("password");
+	public By registrationLink = By.className("Login_register__alreadyHaveUserName__AA3fv");
 	// private by forgotPasswordLocator = By.;
 	private By connectButton = By.className("MuiButton-label");
 	// private By registerLink =
@@ -32,6 +33,11 @@ public class LoginPageObject extends BasePageObject {
 		// driver.findElement(connectButton).click();
 		click(connectButton);
 		return new HomePage(driver, log);
+	}
+	
+	public RegistrationPageObject regPage() {
+		click(registrationLink);
+		return new RegistrationPageObject(driver, log);
 	}
 
 }
