@@ -1,5 +1,7 @@
 package net.azurewebsites.rakevetfront.pages;
 
+import java.util.List;
+
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -10,32 +12,42 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePageObject {
-	
+
 	protected WebDriver driver;
 	protected Logger log;
+	protected List<WebElement> selects;
 
 	public BasePageObject(WebDriver driver, Logger log) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
 		this.log = log;
-		
+
 	}
+
 	protected void openUrl(String url) {
 		driver.get(url);
 	}
-	
+
 	protected WebElement find(By locator) {
 		return driver.findElement(locator);
 	}
-	
+
 	protected void click(By locator) {
-		waitForVisibilityOf(locator,5);
+		waitForVisibilityOf(locator, 5);
 		find(locator).click();
 	}
+
 	protected void type(String text, By locator) {
 		waitForVisibilityOf(locator, 5);
 		find(locator).sendKeys(text);
 	}
+
+	protected List<WebElement> findOptionsInDropdownt(By locator) {
+
+		return driver.findElements(locator);
+	}
+	
+	//protected WebElement selectRsndomlyOption
 
 	/**
 	 * Wait for specific ExpectedCondition for the given amount of time in seconds
@@ -62,6 +74,6 @@ public class BasePageObject {
 			attempts++;
 		}
 
-}
-	
+	}
+
 }
