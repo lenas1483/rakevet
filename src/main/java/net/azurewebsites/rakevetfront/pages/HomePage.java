@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 public class HomePage extends BasePageObject {
 
 	public By logOutButton = By.className("header_profile__photo__3Zp1a");
+	public By lessonsButton = By.className("MuiButton-label");
 
 
 
@@ -15,8 +16,16 @@ public class HomePage extends BasePageObject {
 		// TODO Auto-generated constructor stub
 		super(driver,log);
 	}
+	
 	public boolean isLogOutButtonVisible() {
 		return find(logOutButton).isDisplayed();
 	}
-
+	
+	public boolean isLessonButtonVisibale() {
+		return find(lessonsButton).isDisplayed();
+	}
+	public LessonsPageObject lessonspage() {
+		click(lessonsButton);
+		return new LessonsPageObject(driver, log);
+	}
 }

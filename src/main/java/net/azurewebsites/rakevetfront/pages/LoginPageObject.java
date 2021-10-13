@@ -11,7 +11,7 @@ public class LoginPageObject extends BasePageObject {
 		super(driver, log);
 	}
 
-	private String pageUrl = "https://rakevet-front.azurewebsites.net/";
+	private String pageUrl = "https://israrail-development-front.azurewebsites.net/";
 	private By emailLocator = By.id("email");
 	private By passwordLocator = By.id("password");
 	public By registrationLink = By.className("Login_register__alreadyHaveUserName__AA3fv");

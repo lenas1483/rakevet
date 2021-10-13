@@ -22,17 +22,22 @@ public class PositiveLoginTests extends TestUtilites {
 		HomePage homePage = new HomePage(driver,log);
 		loginPageObject.openPage();
 		
-		 // loginPageObject.logIn("lena@moonsite.co.il", "Moonsite78");
+		 loginPageObject.logIn("lena@moonsite.co.il", "Moonsite78");
 		  
 		  log.info("Main page is opened."); 
 		  BasePageObject basePageObject = new BasePageObject(driver,log);
-		 // basePageObject.waitForVisibilityOf(homePage.logOutButton);
+		 basePageObject.waitForVisibilityOf(homePage.logOutButton);
 		 
-		basePageObject.waitForVisibilityOf(loginPageObject.registrationLink);
-		//Assert.assertTrue(homePage.isLogOutButtonVisible(), "LogOut Button is not visible.");
-		loginPageObject.regPage();
-		RegistrationPageObject registrationPageObject = new RegistrationPageObject(driver,log);
-		log.info(registrationPageObject.getPageUrl());
+		//basePageObject.waitForVisibilityOf(loginPageObject.registrationLink);
+		Assert.assertTrue(homePage.isLogOutButtonVisible(), "LogOut Button is not visible.");
+		//loginPageObject.regPage();
+		//RegistrationPageObject registrationPageObject = new RegistrationPageObject(driver,log);
+		//log.info(registrationPageObject.getPageUrl());
+		homePage.lessonspage();
+		String actualUrl = driver.getCurrentUrl();
+		String expectedPageUrl = "http://israrail-development-front.azurewebsites.net/lesson/";
+		
+		Assert.assertEquals(actualUrl,expectedPageUrl, "Expected:"+ expectedPageUrl + "but got:" + actualUrl);
 	}
 
 }
